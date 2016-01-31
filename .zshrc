@@ -70,3 +70,6 @@ bindkey '^[[4~' end-of-line                 # [End] - move to the end of line
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# export EDITOR
+export EDITOR=vim
