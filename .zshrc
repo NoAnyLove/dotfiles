@@ -39,10 +39,10 @@ fi
 
 # alias
 alias ls='ls --color=auto'
-alias ll='ls -alF'
-alias lh='ls -alFh'
-alias la='ls -A'
 alias l='ls -CF'
+alias la='ls -AF'
+alias ll='ls -lhF'
+alias lla='ls -lahF'
 
 # source local install autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
