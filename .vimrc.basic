@@ -1,0 +1,66 @@
+set nocompatible
+syntax on
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set cindent
+set number
+set autoindent
+set ignorecase
+set smartcase
+set infercase
+set ruler
+colo desert
+
+" set utf-8 encoding
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  "setglobal bomb
+  set fileencodings=ucs-bom,utf-8,cp936,euc-cn,latin1
+endif
+
+" set filename completion case insensitive
+if exists("&wildignorecase")
+  set wildignorecase
+endif
+
+" enable mouse support
+set mouse=a
+set ttymouse=xterm2
+behave xterm
+set selectmode=mouse
+
+" split navigations
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" quick movements in Insert-Mode
+inoremap II <Esc>I
+inoremap AA <Esc>A
+inoremap OO <Esc>o
+
+" 0 jump to line beginning, 9 jump to line end
+nnoremap 9 $
+
+""""""""""""""""""""
+" Leader shortcuts "
+""""""""""""""""""""
+let mapleader = "\<Space>"
+
+" toggle invisible character
+" space option is available after 7.4.711
+if has("patch-7.4.711")
+  set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:␣
+else
+  set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+endif
+nmap <Leader>la :set list!<CR>
+
+" save file
+nnoremap <Leader>w :w<CR>
