@@ -64,3 +64,6 @@ nmap <Leader>la :set list!<CR>
 
 " save file
 nnoremap <Leader>w :w<CR>
+
+" toggle paste mode
+set pastetoggle=<leader>p
