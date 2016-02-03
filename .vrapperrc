@@ -1,0 +1,26 @@
+" Prefer to use Vim's key bindings and Unbind following keys
+" Ctrl+W, Ctrl+F, Ctrl+B (use Ctrl+Shift+B to Build All), Ctrl+N, Ctrl+P, 
+
+" set search option
+set ignorecase
+set smartcase
+
+" mimic let mapleader = '\<Space>'
+nnoremap <Space>w :w<CR>
+nnoremap <Space>f :format<CR>
+nnoremap <Space>l :set list!<CR>
+
+" quick movement in Insert-Mode
+inoremap II <Esc>I
+inoremap AA <Esc>A
+" equivalent of Shift+Enter
+inoremap OO <Esc>o
+
+inoremap JJ <ESC>A;<CR>
+inoremap KK <ESC>
+
+" use 0 jump to line beginning, use 9 jump to line end
+nnoremap 9 $
+
+" enable use <C-n> and <C-p> to move selection up and down in content-assist dropdown
+set contentassistmode
