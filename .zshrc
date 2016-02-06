@@ -19,6 +19,7 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/pip
     zgen oh-my-zsh plugins/rsync
     zgen oh-my-zsh plugins/sudo
+    zgen oh-my-zsh plugins/tmuxinator
     zgen oh-my-zsh plugins/ubuntu
     
     # do not use plugins/autojump if exists local install autojump
