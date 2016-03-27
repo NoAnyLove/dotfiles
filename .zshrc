@@ -74,3 +74,5 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
 
 # export EDITOR
 export EDITOR=vim
+
+[[ -s ~/.config/myzsh.zsh ]] && source ~/.config/myzsh.zsh
