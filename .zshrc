@@ -2,6 +2,12 @@
 # zgen configuration #
 ######################
 # use zgen plugin manager for zsh
+
+if [ ! -f ~/.zgen/zgen.zsh ]; then
+    echo "Install zgen"
+    git clone https://github.com/tarjoilija/zgen.git ~/.zgen
+fi
+
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
