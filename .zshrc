@@ -82,3 +82,17 @@ BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
 export EDITOR=vim
 
 [[ -s ~/.config/myzsh.zsh ]] && source ~/.config/myzsh.zsh
+
+function update_dotfiles() {
+    print "Update dotfiles"
+    
+    # update zsh config
+    cp -v ~/.zgen/NoAnyLove/dotfiles-master/.zshrc ~/
+    # update tmux config
+    cp -v ~/.zgen/NoAnyLove/dotfiles-master/.tmux.conf ~/
+    cp -v ~/.zgen/NoAnyLove/dotfiles-master/.config/tmux ~/.config/tmux -R\
+    # update vrapperrc config
+    cp -v ~/.zgen/NoAnyLove/dotfiles-master/.vrapperrc ~/
+
+    print "Update finished"
+}
