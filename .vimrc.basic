@@ -35,6 +35,15 @@ set ttymouse=xterm2
 behave xterm
 set selectmode=mouse
 
+" set font for GUI
+if has("gui_running")
+  if has('gui_win32')
+    set guifont=Fantasque_Sans_Mono:h16
+  else
+    set guifont=Fantasque\ Sans\ Mono\ 16
+  endif
+endif
+
 " split navigations
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
