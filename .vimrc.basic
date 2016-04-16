@@ -66,5 +66,8 @@ nmap <Leader>la :set list!<CR>
 " save file
 nnoremap <Leader>w :w<CR>
 
+" allow saving file as sudo when forgot to start vim using sudo
+cmap w!! w !sudo tee > /dev/null %
+
 " toggle paste mode (this setting may cause incorrectly paste)
 "set pastetoggle=<leader>p
