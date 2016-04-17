@@ -61,6 +61,8 @@ autoload -U compinit && compinit -u
 # Override plugin ubuntu
 alias ac='sudo apt-cache'
 #alias ag='sudo apt-get'
+# unalias ag for apt-get, save it for silversearcher-ag
+unalias ag
 alias app='sudo apt-cache show'
 
 # this fix Ctrl-s shortcut for vim-ipython
