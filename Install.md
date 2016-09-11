@@ -11,17 +11,12 @@ wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
 ```
 
-## Install zgen
+## Install fonts
+
+I personally like Fantasque Sans Mono
 
 ```
-# clone zgen to ~/.config/.zgen folder
-git clone https://github.com/tarjoilija/zgen.git ~/.zgen
-```
-
-# Install base16-shell
-
-```
-git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
+https://github.com/belluzj/fantasque-sans
 ```
 
 ## Install autojump
@@ -40,13 +35,13 @@ sudo apt-get install command-not-found
 sudo update-command-not-found
 ```
 
-# Install thefuck
+## Install thefuck
 
 ```
 sudo pip install thefuck
 ```
 
-# Install Vim
+## Install Vim
 
 如果Vim版本低于7.4，需要编译安装最新版。
 
