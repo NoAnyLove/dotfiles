@@ -39,7 +39,9 @@ if ! zgen saved; then
 
     # theme
     zgen load NoAnyLove/dotfiles zsh/themes/custom-ys
-    
+
+    zgen load NoAnyLove/base16-shell
+
     # save all to init script
     zgen save
 fi
@@ -77,7 +79,8 @@ bindkey '^[[1~' beginning-of-line           # [Home] - move to the beginning of 
 bindkey '^[[4~' end-of-line                 # [End] - move to the end of line
 
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/base16-solarized.dark.sh"
+BASE16_THEME="solarized-dark"
+BASE16_SHELL="$HOME/.zgen/NoAnyLove/base16-shell-master/scripts/base16-$BASE16_THEME.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 # export EDITOR
