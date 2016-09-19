@@ -1,3 +1,7 @@
+" vim:fdm=marker
+" minimal vim configuration without plugins
+
+" General Settings {{{"
 set nocompatible
 syntax on
 set tabstop=4
@@ -11,7 +15,36 @@ set ignorecase
 set smartcase
 set infercase
 set ruler
+set laststatus=2
+"set nowrap
+" enable instant search
+set incsearch
+" enable vim command-line completion
+set wildmenu
+
+" color theme
 colo desert
+
+" automatically reload .vimrc when it saving
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+" enable fold
+set foldmethod=syntax
+set nofoldenable
+
+" enable mouse support
+set mouse=a
+set ttymouse=xterm2
+behave xterm
+set selectmode=mouse
+
+" enable filetype
+filetype on
+filetype indent on
+filetype plugin on
+
+" disable expandtab for Makefile
+autocmd FileType make setlocal noexpandtab
 
 " set utf-8 encoding
 if has("multi_byte")
@@ -29,12 +62,6 @@ if exists("&wildignorecase")
   set wildignorecase
 endif
 
-" enable mouse support
-set mouse=a
-set ttymouse=xterm2
-behave xterm
-set selectmode=mouse
-
 " set font for GUI
 if has("gui_running")
   if has('gui_win32')
@@ -44,27 +71,53 @@ if has("gui_running")
   endif
 endif
 
-" split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
+" }}}
+
+" Normal shortcuts {{{
+" loacate to the begin/end of a line
+nmap LB 0
+nmap LE $
+
+" split navigations (Optional)
+"nnoremap <C-J> <C-W><C-J>
+"nnoremap <C-K> <C-W><C-K>
+"nnoremap <C-L> <C-W><C-L>
+"nnoremap <C-H> <C-W><C-H>
+
+" traverse window
+nnoremap nw <C-W><C-W>
 
 " quick movements in Insert-Mode
 inoremap II <Esc>I
 inoremap AA <Esc>A
 inoremap OO <Esc>o
 
-" 0 jump to line beginning, 9 jump to line end
-nnoremap 9 $
+" allow saving file as sudo when forgot to start vim using sudo
+cmap w!! w !sudo tee > /dev/null %
+" }}}
 
-""""""""""""""""""""
-" Leader shortcuts "
-""""""""""""""""""""
+" Leader shortcuts {{{
 let mapleader = "\<Space>"
 
+" save file
+nnoremap <Leader>w :w<CR>
+" copy to system clipboard
+vnoremap <Leader>y "+y
+" paste from system clipboard
+nmap <Leader>p "+p
+
+" quickly jump to window
+nnoremap <Leader>hw <C-W>h
+nnoremap <Leader>jw <C-W>j
+nnoremap <Leader>kw <C-W>k
+nnoremap <Leader>lw <C-W>l
+
+" jump between matchings
+"nmap <Leader>m %
+nmap <Leader>M %
+
 " toggle invisible character
-" space option is available after 7.4.711
+" note: space option is available after 7.4.711
 if has("patch-7.4.711")
   set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:␣
 else
@@ -72,11 +125,7 @@ else
 endif
 nmap <Leader>la :set list!<CR>
 
-" save file
-nnoremap <Leader>w :w<CR>
-
-" allow saving file as sudo when forgot to start vim using sudo
-cmap w!! w !sudo tee > /dev/null %
-
 " toggle paste mode (this setting may cause incorrectly paste)
 "set pastetoggle=<leader>p
+
+" }}}
