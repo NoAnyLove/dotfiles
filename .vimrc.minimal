@@ -92,6 +92,9 @@ inoremap II <Esc>I
 inoremap AA <Esc>A
 inoremap OO <Esc>o
 
+" mimic Eclipse Shift+Enter, but only works with vim GUI
+inoremap <S-CR> <Esc>o
+
 " allow saving file as sudo when forgot to start vim using sudo
 cmap w!! w !sudo tee > /dev/null %
 " }}}
