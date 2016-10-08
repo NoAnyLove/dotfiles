@@ -89,15 +89,28 @@ export EDITOR=vim
 [[ -s ~/.config/myzsh.zsh ]] && source ~/.config/myzsh.zsh
 
 function update_dotfiles() {
-    print "Update dotfiles"
-    
-    # update zsh config
-    cp -v ~/.zgen/NoAnyLove/dotfiles-master/.zshrc ~/
-    # update tmux config
-    cp -v ~/.zgen/NoAnyLove/dotfiles-master/.tmux.conf ~/
-    cp -v ~/.zgen/NoAnyLove/dotfiles-master/.config/tmux ~/.config/tmux -R\
-    # update vrapperrc config
-    cp -v ~/.zgen/NoAnyLove/dotfiles-master/.vrapperrc ~/
-
-    print "Update finished"
+    if [ -z $1 ]; then
+        print "Update dotfiles"
+        # update zsh config
+        cp -v ~/.zgen/NoAnyLove/dotfiles-master/.zshrc ~/
+        # update tmux config
+        cp -v ~/.zgen/NoAnyLove/dotfiles-master/.tmux.conf ~/
+        cp -v ~/.zgen/NoAnyLove/dotfiles-master/.config/tmux ~/.config/tmux -R
+        # update vrapperrc config
+        cp -v ~/.zgen/NoAnyLove/dotfiles-master/.vrapperrc ~/
+        print "Update finished"
+    else
+        case $1 in
+        minimal)
+            print "Update minimal Vim configuration"
+            cp -v ~/.zgen/NoAnyLove/dotfiles-master/.vimrc.minimal ~/.vimrc
+            ;;
+        vim)
+            print "Update basic Vim configuration"
+            cp -v ~/.zgen/NoAnyLove/dotfiles-master/.vimrc ~/.vimrc
+            ;;
+        *)
+            print "Unknown Parameter $1"
+        esac
+    fi
 }
