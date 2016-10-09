@@ -408,7 +408,7 @@ nmap <silent> <Leader>sw :FSHere<cr>
 " }}}
 
 " taskwiki Settings {{{
-let g:taskwiki_sort_order='depends+'
+let g:taskwiki_sort_order='depends+,due+'
 let g:vimwiki_folding='expr'
 " }}}
 
