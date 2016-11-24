@@ -27,10 +27,10 @@ if ! zgen saved; then
     zgen oh-my-zsh plugins/sudo
     zgen oh-my-zsh plugins/tmuxinator
     zgen oh-my-zsh plugins/ubuntu
-    
+
     # do not use plugins/autojump if exists local install autojump
     [[ ! -s ~/.autojump/etc/profile.d/autojump.sh ]] && zgen oh-my-zsh plugins/autojump
-    
+
     # external plugins
     zgen load zsh-users/zsh-syntax-highlighting
 
@@ -79,7 +79,7 @@ bindkey '^[[1~' beginning-of-line           # [Home] - move to the beginning of 
 bindkey '^[[4~' end-of-line                 # [End] - move to the end of line
 
 # Base16 Shell
-BASE16_THEME="solarized-dark"
+BASE16_THEME="default-dark"
 BASE16_SHELL="$HOME/.zgen/NoAnyLove/base16-shell-master/scripts/base16-$BASE16_THEME.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
