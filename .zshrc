@@ -40,7 +40,8 @@ if ! zgen saved; then
     # theme
     zgen load NoAnyLove/dotfiles zsh/themes/custom-ys
 
-    zgen load NoAnyLove/base16-shell
+    # change defualt ANSI colors
+    zgen load chriskempson/base16-shell
 
     # save all to init script
     zgen save
@@ -63,12 +64,10 @@ autoload -U compinit && compinit -u
 # Override plugin ubuntu
 alias ac='sudo apt-cache'
 #alias ag='sudo apt-get'
+
 # unalias ag for apt-get, save it for silversearcher-ag
 unalias ag
 alias app='sudo apt-cache show'
-
-# this fix Ctrl-s shortcut for vim-ipython
-stty stop undef # to unmap ctrl-s
 
 # bindkey for PuTTY Ctrl+LeftArrow and Ctrl+RightArrow
 bindkey '^[[C' forward-word                        # [Ctrl-RightArrow] - move forward one word
@@ -80,12 +79,16 @@ bindkey '^[[4~' end-of-line                 # [End] - move to the end of line
 
 # Base16 Shell
 BASE16_THEME="default-dark"
-BASE16_SHELL="$HOME/.zgen/NoAnyLove/base16-shell-master/scripts/base16-$BASE16_THEME.sh"
+BASE16_SHELL="$HOME/.zgen/chriskempson/base16-shell-master/scripts/base16-$BASE16_THEME.sh"
 [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
+# BASE16_SHELL=$HOME/.zgen/chriskempson/base16-shell-master/
+# [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
 # export EDITOR
 export EDITOR=vim
 
+# load local customization script
 [[ -s ~/.config/myzsh.zsh ]] && source ~/.config/myzsh.zsh
 
 function update_dotfiles() {
