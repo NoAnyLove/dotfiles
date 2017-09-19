@@ -88,6 +88,10 @@ BASE16_SHELL="$HOME/.zgen/chriskempson/base16-shell-master/scripts/base16-$BASE1
 # export EDITOR
 export EDITOR=vim
 
+# disable oh-my-zsh auto update
+DISABLE_UPDATE_PROMPT=true
+DISABLE_AUTO_UPDATE=true
+
 # load local customization script
 [[ -s ~/.config/myzsh.zsh ]] && source ~/.config/myzsh.zsh
 
