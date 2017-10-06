@@ -11,6 +11,10 @@ fi
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
+# disable oh-my-zsh auto update
+DISABLE_UPDATE_PROMPT=true
+DISABLE_AUTO_UPDATE=true
+
 # check if there's no init script
 if ! zgen saved; then
     echo "Creating a zgen save"
@@ -87,10 +91,6 @@ BASE16_SHELL="$HOME/.zgen/chriskempson/base16-shell-master/scripts/base16-$BASE1
 
 # export EDITOR
 export EDITOR=vim
-
-# disable oh-my-zsh auto update
-DISABLE_UPDATE_PROMPT=true
-DISABLE_AUTO_UPDATE=true
 
 # load local customization script
 [[ -s ~/.config/myzsh.zsh ]] && source ~/.config/myzsh.zsh
