@@ -98,6 +98,11 @@ export EDITOR=vim
 function update_dotfiles() {
     if [ -z $1 ]; then
         print "Update dotfiles"
+        if [ ! -d ~/.config ]; then
+            print "Create ~/.config folder"
+            mkdir ~/.config
+        fi
+        
         # update zsh config
         cp -v ~/.zgen/NoAnyLove/dotfiles-master/.zshrc ~/
         # update tmux config
