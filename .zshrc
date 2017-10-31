@@ -8,12 +8,12 @@ if [ ! -f ~/.zgen/zgen.zsh ]; then
     git clone https://github.com/tarjoilija/zgen.git ~/.zgen
 fi
 
-# load zgen
-source "${HOME}/.zgen/zgen.zsh"
-
 # disable oh-my-zsh auto update
 DISABLE_UPDATE_PROMPT=true
 DISABLE_AUTO_UPDATE=true
+
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
 
 # check if there's no init script
 if ! zgen saved; then
