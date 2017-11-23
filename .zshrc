@@ -70,7 +70,7 @@ alias ac='sudo apt-cache'
 #alias ag='sudo apt-get'
 
 # unalias ag for apt-get, save it for silversearcher-ag
-unalias ag
+#unalias ag
 alias app='sudo apt-cache show'
 
 # bindkey for PuTTY Ctrl+LeftArrow and Ctrl+RightArrow
