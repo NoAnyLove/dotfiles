@@ -105,11 +105,17 @@ function update_dotfiles() {
         
         # update zsh config
         cp -v ~/.zgen/NoAnyLove/dotfiles-master/.zshrc ~/
+        
         # update tmux config
         cp -v ~/.zgen/NoAnyLove/dotfiles-master/.tmux.conf ~/
         cp -v ~/.zgen/NoAnyLove/dotfiles-master/.config/tmux ~/.config/tmux -R
+        
         # update vrapperrc config
         cp -v ~/.zgen/NoAnyLove/dotfiles-master/.vrapperrc ~/
+        
+        # update neovim config
+        cp -v ~/.zgen/NoAnyLove/dotfiles-master/.config/nvim ~/.config/nvim -R
+        
         print "Update finished"
     else
         case $1 in
