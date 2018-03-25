@@ -35,6 +35,16 @@ ys_hg_prompt_info() {
 	fi
 }
 
+# from oh-my-zsh/pull/6015
+function virtualenv_or_conda_info {
+	if [[ -n "$VIRTUAL_ENV" ]]; then
+		echo '('%F{blue}`basename $VIRTUAL_ENV`%f') '
+	elif [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+		echo '('%F{blue}`basename $CONDA_DEFAULT_ENV`%f') '
+	fi
+}
+
+
 local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 
 # Prompt format:
@@ -46,9 +56,8 @@ local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 #
 # % ys @ ys-mbp in ~/.oh-my-zsh on git:master x [21:47:42] C:0
 # $
-PROMPT='
+PROMPT="
 %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-%{$fg[yellow]%}$(virtualenv_prompt_info)\
 %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
 %{$fg[white]%}@ \
 %{$fg[green]%}%m \
@@ -57,5 +66,7 @@ PROMPT='
 ${hg_info}\
 ${git_info}\
  \
+$(virtualenv_or_conda_info)\
 %{$fg[white]%}[%*] $exit_code
-%{$terminfo[bold]$fg[white]%}$ %{$reset_color%}'
+%{$terminfo[bold]$fg[white]%}$ %{$reset_color%}"
+
