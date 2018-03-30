@@ -420,7 +420,7 @@ let g:pymode_folding = 0
 " }}}
 
 " base16-vim Settings {{{
-let g:base16_shell_path='$HOME/.zgen/NoAnyLove/base16-shell-master/scripts'
+let g:base16_shell_path='$HOME/.zgen/chriskempson/base16-shell-master/scripts'
 let base16colorspace=256
 colorscheme base16-default-dark
 " }}}
