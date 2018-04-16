@@ -418,7 +418,7 @@
       " let g:airline_symbols.branch = ''
       " let g:airline_symbols.readonly = ''
       " let g:airline_symbols.linenr = ''
- 
+
     " }}}
 
     " tmuxline.vim {{{
@@ -569,6 +569,12 @@
       let g:NERDDefaultAlign = 'left'
     " }}}
 
+    " vim-multiple-cursors Settings {{{
+      " turn search results into cursors with Alt-j
+      nnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+      vnoremap <silent> <M-j> :MultipleCursorsFind <C-R>/<CR>
+    " }}}
+
     " Gundo Settings {{{
       nnoremap <F9> :GundoToggle<CR>
       let g:gundo_prefer_python3 = 1
@@ -608,7 +614,7 @@
         " ctrlsf.vim ettings {{{
         " input :CtrlSF in command line
         nmap     <Leader>ff <Plug>CtrlSFPrompt
-        " input :CtrlSF + current visual selected word 
+        " input :CtrlSF + current visual selected word
         vmap     <Leader>ff <Plug>CtrlSFVwordPath
         " execute :CtrlSF + current visual selected wordimmediately
         vmap     <Leader>fF <Plug>CtrlSFVwordExec
@@ -618,7 +624,7 @@
         nmap     <Leader>fp <Plug>CtrlSFPwordPath
         " reopen CtrlSF windows if it is closed, or focus it if is not closed
         nnoremap <Leader>fo :CtrlSFOpen<CR>
-        " open/close CtrlSF window 
+        " open/close CtrlSF window
         nnoremap <Leader>ft :CtrlSFToggle<CR>
         " this mapping affects input, so we don't use it
         "inoremap <Leader>ft <Esc>:CtrlSFToggle<CR>
@@ -712,5 +718,12 @@
       execute 'source ' . fnameescape(local_path)
     endif
   endif
+
+  " Things you need to localized in local.vim:
+  " * Python interpreter path, e.g.,
+  "   let g:python3_host_prog = 'C:\Python36\Python3.exe'
+  "   let g:python_host_prog = 'C:\Python27\Python.exe'
+  " * set clang library path for clang_complete, e.g.
+  "   let g:clang_library_path='C:\LLVM\bin\libclang.dll'
 
 " Local customization END }}}
